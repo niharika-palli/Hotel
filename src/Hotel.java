@@ -1,57 +1,70 @@
 import java.util.*;
-public class Hotel {
+
+public class Hotel extends Duration {
+
+//    private static Scanner scanner = new Scanner(System.in);
 
     //int hotelId;
     private String hotelName;
-    private String address;
+//    private String address;
     private String city;
     private String landmark;
 
-    private int NumberofRooms;
+    private int numberRooms;
+
+
     //private float rating;
     Facility facilities;
 
-    Scanner sc=new Scanner(System.in);
 
-    public String getHotelName() {
-        return hotelName;
-    }
 
-    public void setHotelName(String hotelName) {
-        this.hotelName = hotelName;
-    }
+//    public String getHotelName() {
+//        return hotelName;
+//    }
+//
+//    public void setHotelName(String hotelName) {
+//        this.hotelName = hotelName;
+//    }
 
-    public String getAddress() {
-        return address;
-    }
+//    public String getAddress() {
 
-    public void setAddress(String address) {
-        this.address = address;
-    }
+//    public int getNumberRooms() {
+//        return numberRooms;
+//    }
 
-    public String getCity() {
-        return city;
+    public void setNumberRooms(int numberRooms) {
+        this.numberRooms = numberRooms;
     }
+//        return address;
+//    }
+//
+//    public void setAddress(String address) {
+//        this.address = address;
+//    }
+
+//    public String getCity() {
+//        return city;
+//    }
 
     public void setCity(String city) {
         this.city = city;
     }
 
-    public String getLandmark() {
-        return landmark;
+//    public String getLandmark() {
+//        return landmark;
+//    }
+//
+//    public void setLandmark(String landmark) {
+//        this.landmark = landmark;
+//    }
+
+    public void displayDate() {
+        super.getDate();
+
     }
 
-    public void setLandmark(String landmark) {
-        this.landmark = landmark;
-    }
 
-    public int getNumberofRooms() {
-        return NumberofRooms;
-    }
 
-    public void setNumberofRooms(int numberofRooms) {
-        NumberofRooms = numberofRooms;
-    }
 
 //    public Facilities getFacilities() {
 //        return facilities;
@@ -61,15 +74,4 @@ public class Hotel {
 //        this.facilities = facilities;
 //    }
 
-
-
-//    public Hotel() {
-//        System.out.println("enter hotel details");
-//        hotelId =sc.nextInt();
-//        hotelname =sc.next();
-//        adress = sc.next();
-//        rooms = sc.nextInt();
-//        rating = sc.nextFloat();
-//       // facilities = sc.next();
-//    }
 }

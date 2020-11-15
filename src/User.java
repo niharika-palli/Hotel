@@ -15,35 +15,35 @@ public class User {
 //        gender = sc.next();
 //    }
 
-    public int getUserId() {
-        return userId;
-
-    }
+//    public int getUserId() {
+//        return userId;
+//
+//    }
 
     public void setUserId(int userId) {
         this.userId = userId;
     }
 
-    public String getName() {
-        return userName;
-    }
+//    public String getName() {
+//        return userName;
+//    }
 
     public void setName(String userName) {
         this.userName = userName;
     }
 
-    public String getMobileNumber() {
-        return mobileNumber;
-    }
+//    public String getMobileNumber() {
+//        return mobileNumber;
+//    }
 
     public void setMobileNumber(String mobileNumber) {
         this.mobileNumber = mobileNumber;
     }
 
-    public String getGender() {
-        System.out.print("Enter Your Gender: ");
-        return gender;
-    }
+//    public String getGender() {
+//        System.out.print("Enter Your Gender: ");
+//        return gender;
+//    }
 
     public void setGender(String gender) {
         this.gender = gender.toUpperCase();

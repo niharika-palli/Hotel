@@ -1,9 +1,46 @@
 import java.util.Scanner;
 
 public class Main {
+    public static Scanner scanner = new Scanner(System.in);
+
     public static void main(String[] args) {
 
-        Scanner scanner = new Scanner(System.in);
+
+       // System.out.println("Enter Your Choice: ");
+       // int choice = scanner.nextInt();
+        boolean quit = false;
+        int choice = 0;
+        printInstructions();
+        while (!quit) {
+            System.out.print("\nEnter your Choice: ");
+            choice = scanner.nextInt();
+            scanner.nextLine();
+
+            switch (choice) {
+                case 0:
+                    printInstructions();
+                    break;
+                case 1:
+                    bookHotel();
+                    break;
+                case 2:
+                    System.out.println("Updating...");
+                    break;
+                case 3:
+                    quit = true;
+                    break;
+            }
+        }
+    }
+
+    public static void printInstructions() {
+        System.out.println("\nPress ");
+        System.out.println("\t 0 - To Print the Choice Options.");
+        System.out.println("\t 1 - To Book a Hotel.");
+        System.out.println("\t 2 - To Cancel a Booking");
+        System.out.println("\t 3 - To Quit the Application.");
+    }
+    public static void bookHotel() {
 
         User userObject = new User();
 
@@ -28,7 +65,31 @@ public class Main {
 
         userObject.userDetails();
 
-//        Hotel hotelObject = new Hotel();
+        Hotel hotelObject = new Hotel();
+
+        System.out.print("\nEnter the City where you want to book: ");
+        String getCity = scanner.nextLine();
+       // scanner.nextLine();
+        hotelObject.setCity(getCity);
+
+        System.out.print("Enter the Number of Rooms you want to Book: ");
+        int roomNumber = scanner.nextInt();
+       // scanner.nextLine();
+        hotelObject.setNumberRooms(roomNumber);
+
+        hotelObject.displayDate();
+
+
+
+
+
+    }
+
+
+
+
+
+//
 //
 //        System.out.print("Enter the User ID: ");
 //        int userID = scanner.nextInt();
@@ -49,7 +110,9 @@ public class Main {
 //        System.out.println(d.Days);
 //        System.out.println(bk.bookingId + bk.hotelId + bk.userId + bk.amount + bk.amount+ps.toString());
 //        System.out.println(ps);
-        }
-    }
+}
+
+
+
 
 
