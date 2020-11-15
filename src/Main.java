@@ -1,3 +1,5 @@
+import javax.swing.*;
+import java.sql.*;
 import java.util.Scanner;
 
 public class Main {
@@ -71,6 +73,7 @@ public class Main {
         String getCity = scanner.nextLine();
        // scanner.nextLine();
         hotelObject.setCity(getCity);
+        System.out.println(getCity);
 
         System.out.print("Enter the Number of Rooms you want to Book: ");
         int roomNumber = scanner.nextInt();
@@ -78,6 +81,24 @@ public class Main {
         hotelObject.setNumberRooms(roomNumber);
 
         hotelObject.displayDate();
+        Connection c = null;
+        try {
+            c = PostgresManager.getConnection();
+            c = DriverManager.getConnection("jdbc:postgresql://127.0.0.1:5432/postgres","postgres","16131a05g1");
+            Statement statement = c.createStatement();
+            String queryCheck="select hotelname from hotel"+" where city=?";
+            PreparedStatement ps=c.prepareStatement(queryCheck);
+            ps.setString(1,getCity);
+            ResultSet resultSet=ps.executeQuery();
+
+
+            while (resultSet.next()) {
+                System.out.println(resultSet.getString(1));
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
 
 
