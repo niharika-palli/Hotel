@@ -94,7 +94,7 @@ public class Main {
             c = PostgresManager.getConnection();
            // c = DriverManager.getConnection("jdbc:postgresql://127.0.0.1:5432/postgres","postgres","16131a05g1");
             //Statement statement = c.createStatement();
-            String queryCheck = "select * from hotel" + " where city=?";
+            String queryCheck = "select hotelname,rooms,hotelid,landmark from hotel" + " where city=?";
             PreparedStatement ps=c.prepareStatement(queryCheck);
             ps.setString(1,getCity);//1 specifies the first parameter in the query
             ResultSet resultSet=ps.executeQuery();
@@ -102,6 +102,9 @@ public class Main {
 
             while (resultSet.next()) {
                 System.out.println(resultSet.getString(1));
+                System.out.println(resultSet.getString(2));
+                System.out.println(resultSet.getString(3));
+                System.out.println(resultSet.getString(4));
             }
 
         } catch (Exception e) {
