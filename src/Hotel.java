@@ -1,21 +1,17 @@
 import java.util.*;
 
 public class Hotel extends Duration {
+    private static Scanner scanner = new Scanner(System.in);
 
-//    private static Scanner scanner = new Scanner(System.in);
-
-    //int hotelId;
+    //int hotelID;
     private String hotelName;
-//    private String address;
+    //    private String address;
     private String city;
     private String landmark;
 
     private int numberRooms;
 
-
-    //private float rating;
     Facility facilities;
-
 
 
 //    public String getHotelName() {
@@ -58,10 +54,25 @@ public class Hotel extends Duration {
 //        this.landmark = landmark;
 //    }
 
-    public void displayDate() {
+    public void displayDate() throws Exception {
         super.getDate();
-
     }
+}
+//
+
+
+
+//    public Facilities getFacilities() {
+//        return facilities;
+//    }
+//
+//    public void setFacilities(Facilities facilities) {
+//        this.facilities = facilities;
+//    }
+
+
+
+
 
 
 
@@ -74,4 +85,4 @@ public class Hotel extends Duration {
 //        this.facilities = facilities;
 //    }
 
-}
+

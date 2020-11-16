@@ -5,11 +5,10 @@ import java.util.Scanner;
 public class Main {
     public static Scanner scanner = new Scanner(System.in);
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
 
-
-       // System.out.println("Enter Your Choice: ");
-       // int choice = scanner.nextInt();
+        // System.out.println("Enter Your Choice: ");
+        // int choice = scanner.nextInt();
         boolean quit = false;
         int choice = 0;
         printInstructions();
@@ -36,19 +35,21 @@ public class Main {
     }
 
     public static void printInstructions() {
+
+        System.out.println("\n\t****************** HOTEL BOOKING APPLICATION ******************");
         System.out.println("\nPress ");
         System.out.println("\t 0 - To Print the Choice Options.");
         System.out.println("\t 1 - To Book a Hotel.");
         System.out.println("\t 2 - To Cancel a Booking");
         System.out.println("\t 3 - To Quit the Application.");
     }
-    public static void bookHotel() {
+    public static void bookHotel() throws Exception {
 
         User userObject = new User();
 
-        System.out.println("\t***********USER DETAILS*************");
+        System.out.println("\n\t****************** PLEASE PROVIDE USER DETAILS ******************");
 
-        System.out.print("Enter the User ID: ");
+        System.out.print("\nEnter the User ID: ");
         int userID = scanner.nextInt();
         scanner.nextLine();
         userObject.setUserId(userID);
@@ -69,26 +70,33 @@ public class Main {
 
         Hotel hotelObject = new Hotel();
 
+        System.out.println("\n\t****************** LOCATION DETAILS ******************");
+
         System.out.print("\nEnter the City where you want to book: ");
         String getCity = scanner.nextLine();
-       // scanner.nextLine();
+        // scanner.nextLine();
         hotelObject.setCity(getCity);
         System.out.println(getCity);
 
         System.out.print("Enter the Number of Rooms you want to Book: ");
         int roomNumber = scanner.nextInt();
-       // scanner.nextLine();
+        // scanner.nextLine();
         hotelObject.setNumberRooms(roomNumber);
-
         hotelObject.displayDate();
+
+
+//        Duration durationObject = new Duration();
+//        durationObject.getDate();
+
+
         Connection c = null;
         try {
             c = PostgresManager.getConnection();
-            c = DriverManager.getConnection("jdbc:postgresql://127.0.0.1:5432/postgres","postgres","16131a05g1");
-            Statement statement = c.createStatement();
-            String queryCheck="select hotelname from hotel"+" where city=?";
+           // c = DriverManager.getConnection("jdbc:postgresql://127.0.0.1:5432/postgres","postgres","16131a05g1");
+            //Statement statement = c.createStatement();
+            String queryCheck = "select * from hotel" + " where city=?";
             PreparedStatement ps=c.prepareStatement(queryCheck);
-            ps.setString(1,getCity);
+            ps.setString(1,getCity);//1 specifies the first parameter in the query
             ResultSet resultSet=ps.executeQuery();
 
 
@@ -105,8 +113,6 @@ public class Main {
 
 
     }
-
-
 
 
 
